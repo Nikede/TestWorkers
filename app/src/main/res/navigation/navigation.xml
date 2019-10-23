@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    app:startDestination="@id/specialtiesListFragment">
+    <fragment
+        android:id="@+id/specialtiesListFragment"
+        android:name="com.nikede.test.ui.specialties.SpecialtiesListFragment"
+        android:label="@string/specialties" >
+        <action
+            android:id="@+id/action_specialtiesListFragment_to_workersListFragment"
+            app:destination="@id/workersListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workersListFragment"
+        android:name="com.nikede.test.ui.workers.list.WorkersListFragment"
+        android:label="WorkersListFragment" >
+        <argument
+            android:name="specialtyId"
+            app:argType="integer" />
+        <argument
+            android:name="specialtyName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_workersListFragment_to_workerDetailFragment"
+            app:destination="@id/workerDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workerDetailFragment"
+        android:name="com.nikede.test.ui.workers.detail.WorkerDetailFragment"
+        android:label="WorkerDetailFragment" >
+        <argument
+            android:name="Surname"
+            app:argType="string" />
+        <argument
+            android:name="Name"
+            app:argType="string" />
+        <argument
+            android:name="Birthday"
+            app:argType="string" />
+        <argument
+            android:name="avatarUrl"
+            app:argType="string" />
+    </fragment>
+</navigation>
